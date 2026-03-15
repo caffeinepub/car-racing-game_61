@@ -1,0 +1,114 @@
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/assets/fonts/BricolageGrotesque.woff2") format("woff2");
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/assets/fonts/Satoshi.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0.1 0.02 270;
+    --foreground: 0.97 0.01 270;
+    --card: 0.13 0.03 270;
+    --card-foreground: 0.97 0.01 270;
+    --popover: 0.13 0.03 270;
+    --popover-foreground: 0.97 0.01 270;
+    --primary: 0.85 0.22 196;
+    --primary-foreground: 0.08 0.02 270;
+    --secondary: 0.18 0.04 270;
+    --secondary-foreground: 0.97 0.01 270;
+    --muted: 0.18 0.03 270;
+    --muted-foreground: 0.6 0.05 270;
+    --accent: 0.75 0.22 35;
+    --accent-foreground: 0.08 0.02 270;
+    --destructive: 0.65 0.28 25;
+    --destructive-foreground: 0.97 0.01 270;
+    --border: 0.22 0.05 270;
+    --input: 0.2 0.04 270;
+    --ring: 0.85 0.22 196;
+    --radius: 0.5rem;
+    --chart-1: 0.85 0.22 196;
+    --chart-2: 0.75 0.22 35;
+    --chart-3: 0.7 0.25 145;
+    --chart-4: 0.8 0.2 300;
+    --chart-5: 0.65 0.28 25;
+    --sidebar: 0.08 0.02 270;
+    --sidebar-foreground: 0.97 0.01 270;
+    --sidebar-primary: 0.85 0.22 196;
+    --sidebar-primary-foreground: 0.08 0.02 270;
+    --sidebar-accent: 0.18 0.04 270;
+    --sidebar-accent-foreground: 0.97 0.01 270;
+    --sidebar-border: 0.22 0.05 270;
+    --sidebar-ring: 0.85 0.22 196;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Satoshi", sans-serif;
+    overflow: hidden;
+  }
+}
+
+.font-display {
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+
+.neon-text {
+  text-shadow: 0 0 10px oklch(0.85 0.22 196 / 0.8), 0 0 30px
+    oklch(0.85 0.22 196 / 0.5), 0 0 60px oklch(0.85 0.22 196 / 0.3);
+}
+
+.neon-orange {
+  text-shadow: 0 0 10px oklch(0.75 0.22 35 / 0.9), 0 0 30px
+    oklch(0.75 0.22 35 / 0.6), 0 0 60px oklch(0.75 0.22 35 / 0.3);
+}
+
+.neon-border {
+  box-shadow: 0 0 8px oklch(0.85 0.22 196 / 0.6), inset 0 0 8px
+    oklch(0.85 0.22 196 / 0.1);
+}
+
+.neon-border-orange {
+  box-shadow: 0 0 8px oklch(0.75 0.22 35 / 0.6), inset 0 0 8px
+    oklch(0.75 0.22 35 / 0.1);
+}
+
+.game-btn {
+  @apply relative font-display font-bold tracking-widest uppercase px-8 py-3 transition-all duration-200;
+  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+}
+
+.game-btn:hover {
+  transform: scale(1.05);
+}
+
+.game-btn:active {
+  transform: scale(0.98);
+}
+
+.scanline {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    oklch(0 0 0 / 0.08) 2px,
+    oklch(0 0 0 / 0.08) 4px
+  );
+  pointer-events: none;
+}
